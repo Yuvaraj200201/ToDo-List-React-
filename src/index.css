@@ -1,0 +1,30 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+    .no-scrollbar::-webkit-scrollbar {
+        display: none;
+    }
+    .no-scrollbar {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+}
+#signup {
+    box-shadow: 0 7px #9c9c9c 
+}
+#signup:active {
+    background-color: yellow;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}
+
+#login {
+    box-shadow: 0 7px #9c9c9c 
+}
+#login:active {
+    background-color: violet;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}
