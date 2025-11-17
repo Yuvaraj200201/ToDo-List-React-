@@ -4,9 +4,9 @@ import "../index.css";
 
 const Signup = ({ user, setUser }) => {
   const navigate = useNavigate();
-  const [uname, setUname] = useState();
-  const [pwd, setPwd] = useState();
-  const [cPwd, setCPwd] = useState();
+  const [uname, setUname] = useState("");
+  const [pwd, setPwd] = useState("");
+  const [cPwd, setCPwd] = useState("");
   const [uAlert, setUAlert] = useState(true);
 
   const handleUInput = (e) => {
@@ -20,6 +20,15 @@ const Signup = ({ user, setUser }) => {
   };
 
   const addUser = () => {
+    if (!uname.trim() || !pwd || !cPwd) {
+      alert("Please fill all fields");
+      return;
+    }
+    if (pwd !== cPwd) {
+      alert("Password do not match");
+      return;
+    }
+    
     user.forEach((item) => {
       if (item.username === uname) {
         setUAlert(false);
